@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sei mein Valentine🤍</title>
+
+  <style>
+   body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#e6f7ff, #ffe6f2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", cursive;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      width: 330px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    h1 {
+      color: #66ccff;
+    }
+
+    p {
+      color: #ff66b2;
+      font-size: 1.1rem;
+    }
+
+    .images {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+    }
+
+    .images img {
+      width: 90px;
+      animation: bounce 2s infinite;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 5px;
+      color: white;
+    }
+
+    .yes {
+      background: #ff66b2;
+    }
+
+    .no {
+      background: #a6a6a6;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>	
+  <div class="card">
+    <h1 id="question">Willst du mein Valentine sein?🤍</h1>
+
+    <div class="images">
+      <img src="cinnamoroll.png" alt="Cinnamoroll">
+      <img src="bear.png" alt="Bear">
+    </div>
+
+    <p id="message">
+      I verspreche dir Loyalität,Liebe und Aufmerksamkeit 🤍🧸
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💕</button>
+      <button class="no" id="noBtn" onclick="sayNo()">No😔</button>
+    </div>
+  </div>
+
+  <script>
+  let noCount = 0;
+
+  function sayNo() {
+    noCount++;
+
+    const question = document.getElementById("question");
+    const noBtn = document.getElementById("noBtn");
+
+    if (noCount === 1) {
+      question.innerText = "bist du dir sicher? 😔";
+    } 
+    else if (noCount === 2) {
+      question.innerText = "sicher? 😔😔😔";
+    } 
+    else if (noCount === 3) {
+      question.innerText = "sicher????? 😠😠😠😠";
+    } 
+    else {
+      question.innerText = "danke das du ja sagst canimm 😊💕";
+      noBtn.style.display = "none";
+    }
+  }
+
+  function sayYes() {
+  document.querySelector(".card").innerHTML = `
+    <h1>Yippiee🤍🤍🤍</h1>
+    <p>
+      Du machst mich zur glücklichsten Person der Welt canimmm 🤍  
+      Happy Valentine’s Day canimm!!!  
+    </p>
+
+    <img 
+      src="canim.png" 
+      alt="Canim"
+      style="
+        width:180px;
+        margin:20px 0;
+        border-radius:25px;
+        box-shadow: 0 0 20px rgba(255,105,180,0.6);
+      "
+    >
+
+    <div style="font-size:3rem;">💞💘💞</div>
+  `;
+}
+</script>
+</body>
+</html>
